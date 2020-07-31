@@ -4,7 +4,7 @@
 
 ### Installation
 ```bash  
-> pip3 install virtualenv
+$ pip install virtualenv
 ```
 
 ### Create venv on Linux/MAC
@@ -12,11 +12,11 @@
 $ virtualenv venv [OR]  virtualenv venv -p <python-version>
 $ source venv/bin/activate 
 $ pip install -r requirements.txt
-& deactivate
+$ deactivate
 ```
 Para desativar o ambiente virtual:
 ```bash   
-& deactivate
+$ deactivate
 ```
 ### Create venv on Windows
 ```bash
