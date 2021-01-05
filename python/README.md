@@ -2,7 +2,7 @@
 
 ## Setting up a Virtual Environment (venv)
 
-_virtualenv_ is used to manage Python packages for different projects. Using virtualenv allows you to avoid installing Python packages globally which could break system tools or other projects. You can install virtualenv using pip. Refer to [source](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
+_virtualenv_ is used to manage Python packages for different projects. Using virtualenv allows you to avoid installing Python packages globally which could break system tools or other projects. You can install virtualenv using pip. Refer to [this documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 ### Installation
 ```bash  
