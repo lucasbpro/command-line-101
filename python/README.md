@@ -14,9 +14,9 @@ $ virtualenv venv
 $ source venv/bin/activate 
 $ pip install -r requirements.txt
 ```
-Or by specifying a specific python version:
+Or by specifying a specific python version (for example, Python 3.6):
 ```bash   
-$ virtualenv venv 
+$ virtualenv venv -p python3.6
 $ source venv/bin/activate 
 $ pip install -r requirements.txt
 ```
