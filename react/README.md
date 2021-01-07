@@ -26,6 +26,9 @@ $ npm start
 ```shell
 $ npm install <name_of_dependency>
 ```
+
+OR 
+
 ```shell
 $ yarn add <name_of_dependency>
 ```
