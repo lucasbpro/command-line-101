@@ -98,14 +98,27 @@ Before commiting your changes to a remote repository, your local rep must be upd
 $ git pull	
 ```
 
-### Removing changes from older commits
+### Removing current changes 
 
-git checkout			updates local repository with remote files, does not remove files from staging area
-git checkout <branch>		switch to branch named <branch>
-git reset			remove files from staging area
-git reset --soft <commit_SHA>	returns version to specific commit		
-git reset --mixed <commit_SHA>	undo other commits (after <commit_SHA>), but keeps modifications
-git reset -- hard <commit_SHA>	undo other commits (after <commit_SHA>) and remove modifications from files	
+To update local repository with remote files without removing files from staging area
+```shell
+$ git checkout			
+```
+
+### Recovering older commits
+
+To return files to specific commit, you will need to know the commit SHA and run
+```shell
+$ git reset --soft <commit_SHA>			
+```
+To undo all commits between current state and the commit identified by <commit_SHA>, run
+```shell
+$ git reset --mixed <commit_SHA
+```
+This will keep the modifications in the files, although the commits will be undone. In case you want to undo the commits between current state and the commit identified by <commit_SHA> and also remove the performed modifications, run 
+```shell
+$ git reset -- hard <commit_SHA>
+```
 
 ## Creating branches
 To crate a branch, just run the following command. then the branch will be created from your current files in the repository. After that, changes in the files will only apply to the created branch
