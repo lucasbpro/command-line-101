@@ -17,18 +17,20 @@ To see the git config parameters currently set, run
 $ git config --list
 ```
 
-### Initializing GIT in a local directory
+### Replicate an existing remote repository into a local folder
 
-This makes the local directory be a git folder (version is managed by git).
-```shell
-$ git init
-```
-
-### Replicate a remote repository into a local folder
-
+If the git repository already exists (in GitHub, for example), just run
 ```shell
 $ git clone <repository_path.git>
 ```
+
+### Initializing GIT in a local directory
+
+In case you haven't cloned a git repository to a local folder, but instead you have an ordinary folder with your project, then run
+```shell
+$ git init
+```
+This will make the local directory be a git folder (you will see tht a .git folder is created within the local folder).
 
 ### Check the status of the folder (changes not commited?)
 
@@ -86,21 +88,21 @@ If you want to label an older commit (not the last one) with a tag, you then nee
 $ git tag -a <insert_your_tag_here> <commit_SHA>
 ```
 
-# Pushing changes to remote repository
+### Pushing changes to remote repository
 
 Once commited, the changes can be pushed (uploaded) to the remote repository by running 
 ```shell
 $  git push
 ```
 
-# Updating your local repository with changes from remote repository
+### Updating your local repository with changes from remote repository
 
 Before commiting your changes to a remote repository, your local rep must be updated. This is performed via
 ```shell
 $ git pull	
 ```
 
-## Removing changes from older commits
+### Removing changes from older commits
 
 git checkout			updates local repository with remote files, does not remove files from staging area
 git checkout <branch>		switch to branch named <branch>
@@ -127,22 +129,41 @@ To switch to a branch which does not exist, run the following command (the speci
 $ git checkout -b <branch_name>	creates a branch and switches to it
 ```
 
-##  Merging branches 
+###  Merging branches 
 The following command will merge <other_branch> to the current branch
 ```shell
 $ git merge --no-ff <other_branch> 		
 ```
 
-## Showing older commits and diffs
+### Showing older commits and diffs
 
-git diff			show diff from local an remote repositories
-git show    			for a specific commit
-git log   			show existing commits
-git log --oneline		summarizes the commits presenting only the commit messages for each of them
-git log --stat			show how many files were changed and the number of lines that were added/removed
-git log --decorate		show commits with tags
-git log -p   			show existing commits with the modifications
-git log --oneline --decorate --graph --all       draws a tree with the branches and commits
+To see all existing commits, run
+```shell
+$ git log   		
+```
+The git log command might be too much. If you want a summary of all existing commits, run
+```shell
+$ git log --oneline		
+```
+To see how many files were changed/added/removed in each commit, run
+```shell
+$ git log --stat		
+```
+To see the commits and their respective tags, run
+```shell
+$ git log --decorate		
+```
+If you want a full picture of existing commits and branches, run
+```shell
+$ git log --oneline --decorate --graph --all       draws a tree with the branches and commits
+```
+
+### Performing diffs 
+To see the diff between local and remote repository
+```shell
+$ git diff			
+```
+
 
 
 
