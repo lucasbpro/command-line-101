@@ -1,63 +1,102 @@
-## GIT Setup
+### General Configuration (First setup on your computer)
 
-To set up Git with your name and email
+To set up Git with your name and email:
 ```shell
 $ git config --global user.name "<Your-Full-Name>"
 $ git config --global user.email "<your-email-address>"	
 ```
 
-git config --global color.ui auto				makes sure that Git output is colored
-git config --global merge.conflictstyle diff3			displays the original state in a conflict
-git config --list	
+To make sure that Git output is colored and that it will display the original state in a conflict:
+```shell
+$ git config --global color.ui auto				
+$ git config --global merge.conflictstyle diff3			
+$ git config --list	
+```
 
-## Initializing GIT in a local directory
+### Initializing GIT in a local directory
 
 This makes the local directory be a git folder (version is managed by git).
 ```shell
 $ git init
 ```
 
-## Replicate a remote repository into a local folder
+### Replicate a remote repository into a local folder
 
 ```shell
 $ git clone <repository_path.git>
 ```
 
-## Check the status of the folder (changes not commited?)
+### Check the status of the folder (changes not commited?)
 
 ```shell
 $ git status
 ```
 
-## PUSHING LOCAL FOLDER TO REMOTE REPOSITORY (GITHUB) FOR THE FIRST TIME
+### Connecting a local directory to a remote repository
 
-git remote add origin <remote-repository_url>		Faz o link do repositorio local com o remoto
-git push -u origin master				Upload files for the first time
+At first, you will need to run:
+```shell
+$ git remote add origin <remote-repository_url.git>
+$ git push --set-upstream origin master		
+```` 
 
-After that, you just need to type "git push" in order to upload files to remote repository.
+For the next pushes, just run
+```shell
+$ git push
+```
 
-git config --get remote.origin.url			To find out the remote rep url
+If you want to remember your remote repository URL, run
+```shell
+$ git config --get remote.origin.url			
+```
 
-## COMMITTING/UPLOADING FILES TO GIT REPOSITORY
+### Commiting changes 
 
-git add <file> or . 		moves file (or all files - by using .) to the stagging area
-git remote add origin <URL>     moves files to remote git repository
-git reset			remove all files from staging area
+To move all changes to stagging area, run
+```shell
+$ git add .
+```
 
-git push						push changes up to remote repository
-git push --set-upstream origin master 			initial push to set the remote as upstream
-git push -u origin master				
-git push origin <branch>				push changes up to branch named <branch>
+If you want to move only a specific file to stagging area, the command is
+```shell
+$ git add <file_name>
+```
+Files in the stagging area will be commited when user runs git commit. In case you want to remove all files from staging area, run
+```shell
+$ git reset			
+```
+To commit changes, just run
+```shell
+$ git commit			
+```
+However, it is a better practice to include a commit message, as follows
+```shell
+$ git commit -m "Inser a message here"
+```
+If you want to label your last commit with a tag, you then need to run
+``` shell
+$ git tag -a <insert_your_tag_here> 
+```
+If you want to label an older commit (not the last one) with a tag, you then need to know the specific commit SHA and then run
+``` shell
+$ git tag -a <insert_your_tag_here> <commit_SHA>
+```
 
-git pull			update your local repository with changes in remote repository
+# Pushing changes to remote repository
 
-git commit			comitt changes to repository with no message
-git commit -m "<message>"	commit changes to repository with message
+Once commited, the changes can be pushed (uploaded) to the remote repository by running 
+```shell
+$  git push
+```
 
-git tag -a v1.0			add tag to last commit
-git tag -a v1.0	<commit_SHA>	add tag to specific commit of SHA=commit_SHA
+# Updating your local repository with changes from remote repository
 
-## REMOVING CHANGES
+Before commiting your changes to a remote repository, your local rep must be updated. This is performed via
+```shell
+$ git pull	
+```
+
+## Removing changes from older commits
 
 git checkout			updates local repository with remote files, does not remove files from staging area
 git checkout <branch>		switch to branch named <branch>
@@ -66,10 +105,31 @@ git reset --soft <commit_SHA>	returns version to specific commit
 git reset --mixed <commit_SHA>	undo other commits (after <commit_SHA>), but keeps modifications
 git reset -- hard <commit_SHA>	undo other commits (after <commit_SHA>) and remove modifications from files	
 
-##  MERGING BRANCHES
-git merge --no-ff <other_branch> 		merge <other_branch> to current branch
+## Creating branches
+To crate a branch, just run the following command. then the branch will be created from your current files in the repository. After that, changes in the files will only apply to the created branch
+```shell
+$ git branch <branch_name>
+```
+To delete a branch, just run
+```shell
+$ git branch -d <branch_name>
+```
+To switch to a specific branch, run
+```shell
+$ git checkout <branch_name>
+```
+To switch to a branch which does not exist, run the following command (the specified branch will be created)
+```shell
+$ git checkout -b <branch_name>	creates a branch and switches to it
+```
 
-## SHOWING COMMITS AND DIFFS 
+##  Merging branches 
+The following command will merge <other_branch> to the current branch
+```shell
+$ git merge --no-ff <other_branch> 		
+```
+
+## Showing older commits and diffs
 
 git diff			show diff from local an remote repositories
 git show    			for a specific commit
@@ -81,12 +141,7 @@ git log -p   			show existing commits with the modifications
 git log --oneline --decorate --graph --all       draws a tree with the branches and commits
 
 
-## CREATING BRANCHES 
 
-git branch <branch_name>	creates a branch
-git branch -d <branch_name>	delete a branch
-git checkout <branch_name>	switches to a specific branch
-git checkout -b <branch_name>	creates a branch and switches to it
 
 
 	
