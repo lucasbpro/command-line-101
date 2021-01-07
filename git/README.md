@@ -1,16 +1,33 @@
 ## GIT Setup
 
-git config --global user.name "<Your-Full-Name>"		sets up Git with your name
-git config --global user.email "<your-email-address>"		sets up Git with your email
+To set up Git with your name and email
+```shell
+$ git config --global user.name "<Your-Full-Name>"
+$ git config --global user.email "<your-email-address>"	
+```
+
 git config --global color.ui auto				makes sure that Git output is colored
 git config --global merge.conflictstyle diff3			displays the original state in a conflict
 git config --list	
 
-## Initializing GIT in a project folder
+## Initializing GIT in a local directory
 
-git init  			make folder a git folder
-git clone			replicate a repository in a local folder
-git status			shows the status of the folder (changes not committed?)
+This makes the local directory be a git folder (version is managed by git).
+```shell
+$ git init
+```
+
+## Replicate a remote repository into a local folder
+
+```shell
+$ git clone <repository_path.git>
+```
+
+## Check the status of the folder (changes not commited?)
+
+```shell
+$ git status
+```
 
 ## PUSHING LOCAL FOLDER TO REMOTE REPOSITORY (GITHUB) FOR THE FIRST TIME
 
