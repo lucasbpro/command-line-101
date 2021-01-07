@@ -31,7 +31,7 @@ This will make the local directory be a git folder (you will see that a .git fol
 At first, you will need to run:
 ```shell
 $ git remote add origin <remote-repository_url.git>
-$ git push --set-upstream origin master		
+$ git push -u origin master		
 ```` 
 
 For the next pushes, just run
