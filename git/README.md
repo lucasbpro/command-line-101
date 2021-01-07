@@ -6,11 +6,15 @@ $ git config --global user.name "<Your-Full-Name>"
 $ git config --global user.email "<your-email-address>"	
 ```
 
-To make sure that Git output is colored and that it will display the original state in a conflict:
+To make sure that Git output is colored and that it will display the original state in a merge conflict:
 ```shell
 $ git config --global color.ui auto				
 $ git config --global merge.conflictstyle diff3			
-$ git config --list	
+```
+
+To see the git config parameters currently set, run
+```shell
+$ git config --list
 ```
 
 ### Initializing GIT in a local directory
