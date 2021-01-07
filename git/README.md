@@ -24,13 +24,7 @@ In case you haven't cloned a git repository to a local folder, but instead you h
 ```shell
 $ git init
 ```
-This will make the local directory be a git folder (you will see tht a .git folder is created within the local folder).
-
-### Check the status of the folder (changes not commited?)
-
-```shell
-$ git status
-```
+This will make the local directory be a git folder (you will see that a .git folder is created within the local folder). So far, this is not connected to a remote repository. 
 
 ### Connecting a local directory to a remote repository
 
@@ -50,9 +44,16 @@ If you want to remember your remote repository URL, run
 $ git config --get remote.origin.url			
 ```
 
+### Check the status of the repository (are there changes not commited?)
+
+This will output a list of changed files which have not been commited
+```shell
+$ git status
+```
+
 ### Commiting changes 
 
-To move all changes to stagging area, run
+To move all changes (listed by _git status_) to the stagging area, run
 ```shell
 $ git add .
 ```
@@ -61,7 +62,8 @@ If you want to move only a specific file to stagging area, the command is
 ```shell
 $ git add <file_name>
 ```
-Files in the stagging area will be commited when user runs git commit. In case you want to remove all files from staging area, run
+
+Files in the stagging area will be commited when user runs _git commit_. In case you want to remove all files from staging area, run
 ```shell
 $ git reset			
 ```
